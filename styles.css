@@ -1,0 +1,298 @@
+:root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --primary-color: #a29bfe;
+            --secondary-color: #6c5ce7;
+            --bg-color: #1a1a2e;
+            --text-color: #f0f0f0;
+            --card-bg: #16213e;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        #toggleTheme {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        #toggleTheme:hover {
+            color: var(--primary-color);
+        }
+
+        .search-container {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .search-container input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px var(--secondary-color);
+        }
+
+        .search-container i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+        }
+
+        .note-form {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .note-form input,
+        .note-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            border: 1px solid var(--secondary-color);
+            border-radius: 5px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .note-form input:focus,
+        .note-form textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px var(--secondary-color);
+        }
+
+        .note-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        #saveNote {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        #saveNote:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .notes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .note-item {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            overflow: hidden;
+        }
+
+        .note-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .note-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .note-item p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .note-item .actions {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .note-item .delete-btn,
+        .note-item .edit-btn,
+        .note-item .view-btn {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-left: 15px;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .note-item .delete-btn:hover,
+        .note-item .edit-btn:hover,
+        .note-item .view-btn:hover {
+            color: var(--primary-color);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            padding: 20px;
+            width: 100%;
+            max-width: none;
+            height: 100%;
+            position: relative;
+            background-color: var(--bg-color);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+            padding: 20px 0;
+        }
+
+        .modal-body {
+            padding-bottom: 40px;
+        }
+
+        .close-btn {
+            color: var(--text-color);
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .theme-selector {
+            position: relative;
+        }
+
+        .theme-btn {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .theme-options {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background-color: var(--card-bg);
+            border-radius: 5px;
+            box-shadow: var(--card-shadow);
+            padding: 10px;
+            z-index: 1002;
+        }
+
+        .theme-option {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .theme-bg {
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .glassmorphism {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
