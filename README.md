@@ -11,7 +11,9 @@ Notely is an intuitive note-taking application designed to help you organize and
 - Save notes securely within the application
 
 ## Screenshot
-![Notely - Note Taking App](screenshot.png)
+![Notely - Note Taking App](IMG_20240706_140336.jpg)
+![Notely - Note Taking App](IMG_20240706_140355.jpg)
+![Notely - Note Taking App](IMG_20240706_140323.jpg)
 
 ## Installation
 1. Clone the repository:
