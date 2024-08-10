@@ -7,7 +7,6 @@ Notely is an intuitive note-taking application designed to help you organize and
 - Create, edit, and delete notes with ease
 - Real-time search functionality to find notes quickly
 - Toggle between light and dark themes for personalized experience
-- Responsive design for seamless usage across devices
 - Save notes securely within the application
 
 ## Screenshot
